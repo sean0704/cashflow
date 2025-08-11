@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>現金流遊戲 — 純前端</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>現金流遊戲 — 網頁版（純前端）</h1>
+      <p class="subtitle">靈感來源：羅伯特·清崎（Robert Kiyosaki）</p>
+    </header>
+
+    <main class="layout">
+      <section class="board-panel">
+        <div class="board-header">
+          <div class="title">棋盤</div>
+          <div id="turn">回合 1</div>
+        </div>
+
+        <div id="board" class="board-grid"></div>
+
+        <div class="controls">
+          <button id="rollBtn" class="btn primary">擲骰子</button>
+          <div>骰子：<span id="dice">1</span></div>
+          <button id="paydayBtn" class="btn">強制發薪</button>
+          <button id="resetBtn" class="btn danger">重置遊戲</button>
+        </div>
+
+        <div id="message" class="message">歡迎來到現金流遊戲 — 擲骰子吧！</div>
+      </section>
+
+      <aside class="panel">
+        <h2>玩家資訊</h2>
+        <div class="info">位置：<span id="position">0</span>（<span id="positionLabel">發薪日</span>）</div>
+
+        <div class="stats">
+          <div class="stat"><div class="label">現金</div><div id="cash" class="value">$5000</div></div>
+          <div class="stat"><div class="label">薪資（每月）</div><div id="salary" class="value">$2000</div></div>
+          <div class="stat"><div class="label">支出（每月）</div><div id="expenses" class="value">$1500</div></div>
+          <div class="stat"><div class="label">被動收入</div><div id="passive" class="value">$0</div></div>
+          <div class="stat"><div class="label">快車道</div><div id="fasttrack" class="value">否</div></div>
+        </div>
+
+        <div class="assets">
+          <div class="section-title">資產</div>
+          <ul id="assetList" class="asset-list"></ul>
+        </div>
+
+        <div class="shop">
+          <div class="section-title">商店</div>
+          <div id="shopList"></div>
+        </div>
+
+        <div class="note">提示：目標是讓被動收入 &gt; 支出，離開老鼠賽跑（Rat Race）進入快車道（Fast Track）。遊戲資料會自動儲存在本機瀏覽器（localStorage）。</div>
+      </aside>
+    </main>
+
+    <footer class="footer">純前端版本 — 直接開啟 index.html 即可遊玩。要我打包成 ZIP 或上傳到你的 GitHub repo 嗎？</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
